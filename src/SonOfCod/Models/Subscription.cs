@@ -17,6 +17,7 @@ namespace SonOfCod.Models
         [EmailAddress]
         public string Email { get; set; }
         [Required]
+        [DataType("Number")]
         public int Age { get; set; }
         [Required]
         public string Favorite { get; set; }        

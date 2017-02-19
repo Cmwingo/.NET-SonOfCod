@@ -1,5 +1,39 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Subscribers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model IEnumerable<SonOfCod.Models.Subscription>
+
+<h2>Subscribers</h2>
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Favorite)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var listSubscriber in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => listSubscriber.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => listSubscriber.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => listSubscriber.Favorite)
+            </td>
+
+        </tr>
+    }
+</table>
