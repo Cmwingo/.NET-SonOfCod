@@ -7,20 +7,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SonOfCod.Models
 {
+    [Table("Subscriptions")]
+
     public class Subscription
     {
-        [Table("Subscriptions")]
-        public class Product
-        {
-            [Key]
-            public int SubscriptionId { get; set; }
-            [Required]
-            [EmailAddress]
-            public string Email { get; set; }
-            [Required]
-            public int Age { get; set; }
-            [Required]
-            public string Favorite { get; set; }
-        }
+        [Key]
+        public int SubscriptionId { get; set; }
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
+        [Required]
+        public int Age { get; set; }
+        [Required]
+        public string Favorite { get; set; }        
     }
 }

@@ -9,7 +9,8 @@
 <hr />
 @if (User.Identity.IsAuthenticated)
 {
-    <p>Hello @User.Identity.Name!</p>
+    <h3>Hello @User.Identity.Name!</h3>
+    <h4>@Html.ActionLink("Manage User Roles", "Index", "Role")</h4>
     @using (Html.BeginForm("LogOff", "Account"))
     {
         <input type="submit" class="btn btn-default" value="Log out" />

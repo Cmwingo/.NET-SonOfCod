@@ -13,5 +13,10 @@ namespace SonOfCod.Models
         {
 
         }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+        }
+        public DbSet<Subscription> Subscriptions { get; set; }
     }
 }

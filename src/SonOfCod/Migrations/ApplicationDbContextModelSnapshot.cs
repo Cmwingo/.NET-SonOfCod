@@ -172,6 +172,24 @@ namespace SonOfCod.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("SonOfCod.Models.Subscription", b =>
+                {
+                    b.Property<int>("SubscriptionId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Age");
+
+                    b.Property<string>("Email")
+                        .IsRequired();
+
+                    b.Property<string>("Favorite")
+                        .IsRequired();
+
+                    b.HasKey("SubscriptionId");
+
+                    b.ToTable("Subscriptions");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole")
