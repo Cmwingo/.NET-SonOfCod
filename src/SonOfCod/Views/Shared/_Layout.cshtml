@@ -4,29 +4,31 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <link href="~/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
 </head>
 <body>
     <div class="header">
         <div class="logo">@Html.ActionLink("Son of Cod Seafood", "Index", "Home")</div>
-        <div class="custom-nav">
-            @Html.ActionLink("Subscribe to our Mailing List", "AddSubscription", "Home")
-            @if (User.IsInRole("Admin"))
-            {
-                @Html.ActionLink("View Subscribers", "ViewSubscriptions", "Home")
-            }
-            @if (User.Identity.IsAuthenticated)
-            {
-                @using (Html.BeginForm("LogOff", "Account"))
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                @Html.ActionLink("Subscribe to our Mailing List", "AddSubscription", "Home")
+                @if (User.IsInRole("Admin"))
                 {
-                    <input type="submit" class="btn btn-default" value="Log out" />
+                    @Html.ActionLink("View Subscribers", "ViewSubscriptions", "Home")
                 }
-            }
-            else
-            {
-                @Html.ActionLink("Log In", "LogIn", "Account")
-            }
+                @if (User.Identity.IsAuthenticated)
+                {
+                    @using (Html.BeginForm("LogOff", "Account"))
+                    {
+                        <input type="submit" class="btn btn-default" value="Log out" />
+                    }
+                }
+                else
+                {
+                    @Html.ActionLink("Log In", "LogIn", "Account")
+                }
+            </div>
         </div>
     </div>
     <div class="container-fluid">
