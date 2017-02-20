@@ -12,7 +12,6 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using SonOfCod.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-
 namespace SonOfCod
 {
     public class Startup
