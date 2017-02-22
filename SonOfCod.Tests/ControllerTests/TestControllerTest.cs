@@ -9,23 +9,16 @@ using Xunit;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authorization;
-using Moq;
 
 namespace SonOfCod.Tests.ControllerTests
 {
-    public class HomeControllerTest
+    public class TestControllerTest
     {
-        var mockDb = new Mock<ApplicationDbContext>();
-        var mockUserManager = new Mock<UserManager>();
         [Fact]
         public void Get_ViewResult_Index_Test()
         {
             //Arrange
-            HomeController controller = new HomeController(_userManager, _signInManager, _db);
-            _db = controller.get
+            TestController controller = new TestController();
 
             //Act
             var result = controller.Index();
