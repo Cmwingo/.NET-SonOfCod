@@ -1,4 +1,4 @@
-# Son of Cod Seafoodm
+# Son of Cod Seafood
 
 This project was generated with Visual Studio 2015 Community
 
